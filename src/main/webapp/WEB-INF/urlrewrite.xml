@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE urlrewrite PUBLIC "-//tuckey.org//DTD UrlRewrite 3.2//EN"
+        "http://tuckey.org/res/dtds/urlrewrite3.0.dtd">
+
+<urlrewrite default-match-type="regex">
+    <rule>
+        <from>/Jakefile</from>
+        <to last="true">/Jakefile</to>
+    </rule>
+
+    <rule>
+        <from>/(index(?.*)\.html)</from>
+        <to last="true">/$1</to>
+    </rule>
+
+    <rule>
+        <from>/((?.+?)\.j)</from>
+        <to last="true">/$1</to>
+    </rule>
+
+    <rule>
+        <from>/((?.+?)\.plist)</from>
+        <to last="true">/$1</to>
+    </rule>
+
+    <rule>
+        <from>/Frameworks/(.*)</from>
+        <to last="true">/Frameworks/$1</to>
+    </rule>
+
+    <rule>
+        <from>/Resources/(.*)</from>
+        <to last="true">/Resources/$1</to>
+    </rule>
+
+    <rule>
+        <from>/css/(.*)</from>
+        <to last="true">/css/$1</to>
+    </rule>
+
+    <rule>
+        <from>/themes/(.*)</from>
+        <to last="true">/themes/$1</to>
+    </rule>
+
+    <rule>
+        <from>/static/(.*)</from>
+        <to last="true">/static/$1</to>
+    </rule>
+
+    <rule>
+        <from>/images/(.*)</from>
+        <to last="true">/images/$1</to>
+    </rule>
+
+    <rule>
+        <from>/(.*)</from>
+        <to>/app/$1</to>
+    </rule>
+
+    <outbound-rule>
+        <from>/app/(.*)</from>
+        <to>/$1</to>
+    </outbound-rule>
+</urlrewrite>
+
